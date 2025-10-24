@@ -14,8 +14,8 @@ export default function MyHeader() {
 
                     <div className="flex items-center">
                         <img className="w-8 h-8 rounded-full border-r-2  bg-sky-100" src="./favicon-32x32.png" alt="user" />
-                        <div className="text-black dark:text-(--off-white) font-bold  items-center justify-items-center bg-FCF6F5  ">
-                            <p><span className="text-(--cherry-red) dark:text-black">Uni</span>Together</p>
+                        <div className="text-black dark:text-dark font-bold  items-center justify-items-center bg-FCF6F5  ">
+                            <p><span className="text-(--cherry-red) dark:text-(--cherry-red)">Uni</span>Together</p>
                         </div>
                     </div>
 
