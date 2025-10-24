@@ -1,11 +1,9 @@
 export default function MyHeader() {
     return (
-        <div className="top-0 bg-[var(--cherry-red)] dark:bg-[var(--off-white)] text-[var(--off-white)] dark:text-[var(--cherry-red)] text-center min-h-50 rounded-b-[30px]">
+        <div className="top-0  text-[var(--off-white)] dark:text-[var(--cherry-red)] text-center min-h-50 rounded-b-[30px]">
             <nav>
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className="flex items-center space-x-3 rtl:space-x-reverse"></div>
-
-                    {/* user */}
 
 
                     <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -14,7 +12,7 @@ export default function MyHeader() {
                             <img className="w-8 h-8 rounded-full" src="./favicon-32x32.png" alt="user" />
                         </button>
                         
-                        <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                        <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm  dark:divide-gray-600" id="user-dropdown">
                             <div className="px-4 py-3">
                                 <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
                                 <span className="block text-sm text-gray-500 truncate dark:text-gray-400">kjkjkjkjkj</span>
@@ -46,9 +44,9 @@ export default function MyHeader() {
 
 
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-user">
-                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
                             <li>
-                                <a href="#" className="block py-2 px-3 text-white  rounded-sm md:bg-transparent  md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                                <a href="#" className="block py-2 px-3 text-white  rounded-sm md:bg-transparent  md:p-0" aria-current="page">Home</a>
                             </li>
                             <li>
                                 <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent hover:text-white md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
