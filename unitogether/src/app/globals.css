@@ -5,6 +5,16 @@
   --off-white: #FCF6F5;
 }
 
+.light-rays-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -14,7 +24,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #990011;
+    --background: ;
     --foreground: #FCF6F5;
   }
 }
