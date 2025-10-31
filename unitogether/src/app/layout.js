@@ -1,7 +1,6 @@
 "use client";
 
 import { Geist, Geist_Mono } from "next/font/google";
-import LightRays from "./components/Effects/LightRays";
 import "./globals.css";
 import React from "react";
 
@@ -35,23 +34,9 @@ export default function RootLayout({ children }) {
     <html lang="it">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ background: isDark ? "#000" : "#fff", color: isDark ? "#FCF6F5" : "#000" }}
+        style={{ background: isDark ? "#050505" : "#fff", color: isDark ? "#FCF6F5" : "#050505" }}
       >
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
-          <LightRays
-            raysOrigin="top-center"
-            raysColor={isDark ? "#FCF6F5" : "#990011"}
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
-            pulsating={true}
-            followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
-            className="custom-rays"
-          />
-        </div>
+        {!isDark && <div className="gradient" />}
         {children}
       </body>
     </html>

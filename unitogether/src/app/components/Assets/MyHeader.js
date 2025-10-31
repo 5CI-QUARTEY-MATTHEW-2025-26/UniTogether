@@ -6,16 +6,31 @@ export default function MyHeader() {
 
     const [userMenuOpen, setUserMenuOpen] = useState(false);
 
+    React.useEffect(() => {
+        if (!userMenuOpen) return;
+        function handleClickOutside(e) {
+            const dropdown = document.getElementById("user-dropdown");
+            const button = document.getElementById("user-menu-button");
+            if (dropdown && !dropdown.contains(e.target) && button && !button.contains(e.target)) {
+                setUserMenuOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [userMenuOpen]);
+
     return (
         <div className="top-0 text-[var(--off-white)] dark:text-[var(--cherry-red)] text-center min-h-50 rounded-b-[30px] w-full">
             <nav>
-                <div className="max-w-screen-xl w-full flex flex-wrap items-center justify-between mx-auto">
+                <div className="max-w-screen-xl w-full flex flex-wrap items-center justify-center gap-4 mx-auto">
 
 
-                    <div className="flex items-center">
-                        <img className="w-8 h-8 rounded-full border-r-2  bg-sky-100" src="./favicon-32x32.png" alt="user" />
-                        <div className="text-black dark:text-dark font-bold  items-center justify-items-center bg-FCF6F5  ">
-                            <p><span className="text-(--cherry-red) dark:text-(--cherry-red)">Uni</span>Together</p>
+                    <div className="flex items-center gap-2">
+                        <img className="w-8 h-8 rounded-full border-r-2 bg-sky-100" src="./favicon-32x32.png" alt="user" />
+                        <div className="text-black dark:text-white font-bold  items-center pl-2 *:justify-items-center bg-FCF6F5  ">
+                            <p><span className="text-(--cherry-red)">Uni</span>Together</p>
                         </div>
                     </div>
 
@@ -46,7 +61,7 @@ export default function MyHeader() {
                                     <a href="#" className="block px-4 py-2 text-sm text-white dark:text-black hover:bg-gray-500 hover:text-black dark:hover:bg-(--cherry-red)  dark:hover:text-white">Earnings</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="block px-4 py-2 text-sm text-white dark:text-black hover:bg-gray-100 hover:text-black dark:hover:bg-(--cherry-red)  dark:hover:text-white">Sign out</a>
+                                    <a href="#" className="block px-4 py-2 text-sm text-white dark:text-black hover:bg-gray-100 hover:text-black dark:hover:bg-(--cherry-red)  dark:hover:text-white">Sign in</a>
                                 </li>
                             </ul>
                         </div>
@@ -72,7 +87,7 @@ export default function MyHeader() {
                         className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${menuOpen ? "flex" : "hidden"}`}
                         id="navbar-user"
                     >
-                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
+                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray-700">
                             <li>
                                 <a href="#" className="block py-2 px-3 text-black dark:text-white  rounded-sm md:bg-transparent  md:p-0" aria-current="page">Home</a>
                             </li>
